@@ -67,7 +67,16 @@
             
             <li class="nav-item" data-level="1"><a href="#gokul-js" class="nav-link">GOKUL JS</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#important-ipv4-fields" class="nav-link">Important IPv4 Fields</a>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#analyzing-detecting-ip-layer-attacks" class="nav-link">Analyzing &amp; Detecting IP Layer Attacks</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#the-ip-layer" class="nav-link">The IP Layer</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ipv4" class="nav-link">IPV4</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -115,7 +124,49 @@ Because of the TTL in hosts ARP caches, an attacker would need to send these pac
 <p><img alt="ARP 1" src="https://github.com/HariPranav/BENIMAGES/blob/master/fyp/ARP_1?raw=true" /></p>
 <p><img alt="ARP 2" src="https://github.com/HariPranav/BENIMAGES/blob/master/fyp/ARP_2?raw=true" /></p>
 <h1 id="gokul-js">GOKUL JS</h1>
-<h2 id="important-ipv4-fields">Important IPv4 Fields</h2></div>
+<h1 id="analyzing-detecting-ip-layer-attacks">Analyzing &amp; Detecting IP Layer Attacks</h1>
+<h2 id="the-ip-layer">The IP Layer</h2>
+<p>The IP layer’s functions are related to how packets are transferred from one hop to another. Source and destination IP addresses are used by the IP layer for inter-host communication. IP addresses reside in the IP header of the IP packet. It should be noted that IP packets travel individually as they are directed to their destination. For example, IP packets from the same source that are traveling to the same destination could get there through different routes.</p>
+<p>During packet delivery, a lot of things can go wrong. The IP layer has no built-in mechanism to identify when a packet gets lost, expired, or dropped. The Transport protocol or the application itself is responsible for identifying and resolving any packet loss.</p>
+<h2 id="ipv4">IPV4</h2>
+<p><img height="400px" width="100%" src="https://raw.githubusercontent.com/HariPranav/BENIMAGES/master/ip%20layer%20attacks/ipv4.png"/></p>
+<ul>
+<li>
+<p>VERSION: Version of the IP protocol (4 bits), which is 4 for IPv4</p>
+</li>
+<li>
+<p>HLEN: IP header length (4 bits), which is the number of 32 bit words in the header. The minimum value for this field is 5 and the maximum is 15.</p>
+</li>
+<li>
+<p>Type of service: Low Delay, High Throughput, Reliability (8 bits)</p>
+</li>
+<li>
+<p>Total Length: Length of header + Data (16 bits), which has a minimum value 20 bytes and the maximum is 65,535 bytes.</p>
+</li>
+<li>
+<p>Identification: Unique Packet Id for identifying the group of fragments of a single IP datagram (16 bits)</p>
+</li>
+<li>
+<p>Flags: 3 flags of 1 bit each : reserved bit (must be zero), do not fragment flag, more fragments flag (same order)</p>
+</li>
+<li>
+<p>Fragment Offset: Represents the number of Data Bytes ahead of the particular fragment in the particular Datagram. Specified in terms of number of 8 bytes, which has the maximum value of 65,528 bytes.</p>
+</li>
+<li>
+<p>Time to live: Datagram’s lifetime (8 bits), It prevents the datagram to loop through the network by restricting the number of Hops taken by a Packet before delivering to the Destination.</p>
+</li>
+<li>
+<p>Protocol: Name of the protocol to which the data is to be passed (8 bits)</p>
+</li>
+<li>
+<p>Header Checksum: 16 bits header checksum for checking errors in the datagram header</p>
+</li>
+</ul>
+<p>Length (IP header length): A fieldcontaining the length of the IP header.</p>
+<p>Total Length (IP datagram/packet length): Specifies the length of the IP packet that includes the IP header and the user data.</p>
+<p>Fragment(ed) Offset: In case of a packet being divided, the fragmentation offset value will be used to reassemble the packet.</p>
+<p>Let’s elaborate more on some important and, oftentimes, abused IPv4 fields.</p>
+<p>First, an IP Version field exists indicating whether we are dealing with IPv4 or IPv6 (valid version numbers are 4 and 6 only). If an invalid IP Version value is identified at the host or router level, the datagram/packet must be silently discarded according to the respective RFC.</p></div>
             </div>
         </div>
 
@@ -196,5 +247,5 @@ Because of the TTL in hosts ARP caches, an attacker would need to send these pac
 
 <!--
 MkDocs version : 1.2.1
-Build Date UTC : 2021-06-16 16:11:27.148245+00:00
+Build Date UTC : 2021-06-18 02:44:58.306574+00:00
 -->
