@@ -53,19 +53,25 @@
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#final-year-project-report">Final Year Project Report</a></li>
         <li class="main "><a href="#index">Index</a></li>
-            <li><a href="#1-link-layer">1. Link Layer</a></li>
-            <li><a href="#2-mitm-attacks">2. MITM Attacks</a></li>
-            <li><a href="#3-arp-attacks">3. ARP Attacks</a></li>
+            <li><a href="#1link-layer">1.Link Layer</a></li>
+            <li><a href="#1a-mitm-attacks">1a. MITM Attacks</a></li>
+            <li><a href="#1b-arp-attacks">1b. ARP Attacks</a></li>
+            <li><a href="#2transport-layer">2.Transport Layer</a></li>
+            <li><a href="#2a-tcp-attacks">2a. TCP Attacks</a></li>
+            <li><a href="#2-transport-layer">2. Transport Layer:</a></li>
+            <li><a href="#2a-identifying-malicious-traffic-in-the-transport-layer">2.a Identifying Malicious traffic in the Transport Layer :</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <h1 id="final-year-project-report">Final Year Project Report</h1>
 <h1 id="index">Index</h1>
-<h2 id="1-link-layer">1. Link Layer</h2>
-<h2 id="2-mitm-attacks">2. MITM Attacks</h2>
-<h2 id="3-arp-attacks">3. ARP Attacks</h2>
-<h3 id="1-link-layer_1">1. Link Layer</h3>
+<h2 id="1link-layer">1.Link Layer</h2>
+<h2 id="1a-mitm-attacks">1a. MITM Attacks</h2>
+<h2 id="1b-arp-attacks">1b. ARP Attacks</h2>
+<h2 id="2transport-layer">2.Transport Layer</h2>
+<h2 id="2a-tcp-attacks">2a. TCP Attacks</h2>
+<h3 id="1-link-layer">1. Link Layer</h3>
 <p>The IEEE 802.x Link layers are a family of standards that enable intercommunications between equipment from a variety of manufacturers</p>
 <p>Link layer communication is facilitated by Network Interface Cards (NICs) and the respective device drivers.Using those, a host can interact with the physical medium on which it resides.Any NIC has a unique identification number known as a
 MAC address which is issued by the NIC’s manufacturer during NIC creation</p>
@@ -73,26 +79,27 @@ MAC address which is issued by the NIC’s manufacturer during NIC creation</p>
 • ARP is stateless. Whenever an ARP response is received, hosts will
 create or update a cache entry with the observed IP/MAC pair (regardless of them issuing an ARP request or not).
 • An initial ARP request can result in the requester’s IP/MAC pair being cached by listening (for broadcasts) hosts; this is done to reduce ARP broadcast requests</p>
-<h3 id="2-mitm-attacks_1">2. MITM Attacks</h3>
+<h3 id="1a-mitm-attacks_1">1a. MITM Attacks</h3>
 <p>Those ARP shortcomings can be leveraged by an attacker to launch man-in-the-middle attacks, where he/she can pose as just another host on the local network or even as a router.</p>
 <p>If such attacks are executed successfully, the attacker can receive traffic destined for another host, inspect it or alter it and ultimately forward it to the original destination. Not only that, but the attacker can also receive, inspect or alter the traffic from the original destination and ultimately
 forward it back to the original sender.</p>
 <p><img alt="MITM" src="https://github.com/HariPranav/BENIMAGES/blob/master/fyp/MITM?raw=true" /></p>
-<h3 id="3-arp-attacks_1">3. ARP Attacks</h3>
+<h3 id="1b-arp-attacks_1">1b. ARP Attacks</h3>
 <p>ARP poisoning can be exploited to add fake information between two communication peers into a local network. In a scenario in which M (the attacker) wants to listen to all the traffic between A and B, Mwould have to send fake IP/MAC pairs to both A and B, making himself the Man-in-the-Middle   </p>
 <p>• Normal: ARP broadcasts are normal from both clients and servers, including network devices at a reasonable flow.
 • Suspicious: Tens, hundreds, or even thousands of ARP broadcast messages within a small time window.</p>
 <p>Even without knowing off hand what legit device can potentially have that MAC address on your network, but just based on the flow and speed of the ARP Requests, we can tell something is odd.</p>
 <p><img alt="normal ARP" src="https://github.com/HariPranav/BENIMAGES/blob/master/fyp/NormalARP?raw=true" /></p>
 <p><img alt="grafted ARP" src="https://github.com/HariPranav/BENIMAGES/blob/master/fyp/Grafted%20ARP?raw=true" /></p>
-<h3 id="3a-arp-poisioning">3.a ARP poisioning:</h3>
+<h3 id="1c-arp-poisioning">1.c ARP poisioning:</h3>
 <p>The following are the steps for a successful attack:
 1. M would pretend to be B to A: it will send a gratuitous ARP reply with the pair: IP_B-&gt;MAC_M
 2. M would pretend to be A to B: it will send a gratuitous ARP reply with the pair: IP_A-&gt;MAC_M
 Because of the TTL in hosts ARP caches, an attacker would need to send these packets at intervals lower than the timeout (usually every 30 seconds is a good choice).</p>
 <p><img alt="ARP 1" src="https://github.com/HariPranav/BENIMAGES/blob/master/fyp/ARP_1?raw=true" /></p>
 <p><img alt="ARP 2" src="https://github.com/HariPranav/BENIMAGES/blob/master/fyp/ARP_1?raw=true" /></p>
-<h3 id="3b-detection-of-arp-on-the-stack">3b. Detection of ARP on the Stack</h3>
+<h3 id="1d-detection-of-arp-on-the-stack">1d. Detection of ARP on the Stack</h3>
+<p>Analysing the mac_flood.pcap</p>
 <p>Here we can see that the host is Kali machine </p>
 <p><img alt="Kali Host" src="https://github.com/HariPranav/BENIMAGES/blob/master/fyp/ARP_Host_Kali?raw=true" /></p>
 <p>Under the alert signature we can see that suricata can detect the different signatures</p>
@@ -106,7 +113,41 @@ Because of the TTL in hosts ARP caches, an attacker would need to send these pac
 <li>The Protocol UDP which is higher than TCP which carries the ICMP message protocol</li>
 <li>The Orgin IP of the ARP request which is abnormally high</li>
 </ol>
-<p><img alt="ARP Dashboard" src="https://github.com/HariPranav/BENIMAGES/blob/master/fyp/ARP_Dasboard?raw=true" /></p></div>
+<p><img alt="ARP Dashboard" src="https://github.com/HariPranav/BENIMAGES/blob/master/fyp/ARP_Dasboard?raw=true" /></p>
+<h2 id="2-transport-layer">2. Transport Layer:</h2>
+<p>The main protocols are UDP and TCP which are used in the transport layer and TCP is a connection oriented protocol where as UDP is not.</p>
+<p>Since TCP is connection oriented, it is reliable and it can establish the connection via a THREE WAY HANDSHAKE.</p>
+<p><img alt="TCP_3_Way_Handshake" src="https://github.com/HariPranav/BENIMAGES/blob/master/fyp/TCP_3_Way_Handshake?raw=true" /></p>
+<p>Three way handshake: There are mainly four flags, SYN, ACK, SEQ and FYN</p>
+<p>Steps:</p>
+<ol>
+<li>
+<p>The client send the TCP packet with a SYN flag set to 1 and the ACK to 0 and the SEQ set to a random number.</p>
+</li>
+<li>
+<p>In the next step the SEQ is set to a random value by the receiver and the ACK flag is set to the increment by 1 from the SEQ number. This shows that the receiver has acknowledged the initial sequence number of the sender</p>
+</li>
+<li>
+<p>In the last step the three way handshake is completed as the ACK is set to the SEQ +1 and the SYN flag is set.</p>
+</li>
+</ol>
+<p><img alt="TCP_Image" src="https://github.com/HariPranav/BENIMAGES/blob/master/fyp/TCP_Image?raw=true" /></p>
+<h2 id="2a-identifying-malicious-traffic-in-the-transport-layer">2.a Identifying Malicious traffic in the Transport Layer :</h2>
+<p>If there are devices running scans using tools such as NMAP it can be identified as there are excessive SYN packets being sent without completing the three way handshake.</p>
+<p>Also if there are usage of different flags we can identify the irregularities.</p>
+<p>And finally if a single host is sending traffic such as SYN flag to multiple hosts we can flag it as an anomaloy.</p>
+<p>More specifically, Nmap sends a series of SYN packets to an open port and tries to perform OS fingerprinting, by attempting to identify the ISN(Initial Sequence number) generation formula in the returned SYN/ACK and comparing the returned values to a file that contains expected returned values for a series of checks.</p>
+<p>Analysing the nmap_sequence number prediction.pcap</p>
+<p>Scanning by a single IP sending multiple SYN flags. Here we can see that the <strong>conn_state</strong> index of ZEEK iDS identifies the state of the connection.</p>
+<p><img alt="TCP_Zeek_Constate" src="https://github.com/HariPranav/BENIMAGES/blob/master/fyp/TCP_Zeek_Connstate?raw=true" /></p>
+<p>We can use the history flag of Zeek to check the type of packet sent and received as well</p>
+<p><img alt="TCP_Zeek_History" src="https://github.com/HariPranav/BENIMAGES/blob/master/fyp/TCP_Zeek_History?raw=true" /></p>
+<p>Analysing strange_scanning.pcap </p>
+<p>Obviously, we are dealing with a scanning attempt, but what is that destination port 0 (TCP) all about?A host is not supposed to be listening on port 0. A scanning tool sending packets to port 0 (TCP) of the remote host, is trying identify if the remote host is alive. If the remote host is alive, then, a RST response should be sent to all those packets.</p>
+<p>Here in the dashboard we can see that under the <strong>history</strong> it is <strong>Sr</strong> and the <strong>id.resp_p</strong> is 0. <strong>conn_state</strong> is <strong>REJ</strong> which says that the connection is rejected. </p>
+<p><img alt="TCP_strange_scanning" src="https://github.com/HariPranav/BENIMAGES/blob/master/fyp/TCP_starange_scanning?raw=true" /></p>
+<p>All Dashboards for TCP attacks:</p>
+<p><img alt="TCP_dashboard" src="https://github.com/HariPranav/BENIMAGES/blob/master/fyp/TCP_dashboard?raw=true" /></p></div>
         </div>
 
         <footer class="col-md-12">
@@ -145,5 +186,5 @@ Because of the TTL in hosts ARP caches, an attacker would need to send these pac
 
 <!--
 MkDocs version : 0.16.3
-Build Date UTC : 2021-06-18 12:04:21
+Build Date UTC : 2021-06-18 14:58:00
 -->
