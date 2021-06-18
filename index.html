@@ -6,93 +6,66 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="None">
         
-        <link rel="canonical" href="https://example.com/">
-        <link rel="shortcut icon" href="img/favicon.ico">
+        
+        <link rel="shortcut icon" href="./img/favicon.ico">
         <title>My Docs</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/font-awesome.min.css" rel="stylesheet">
-        <link href="css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
-
-        <script src="js/jquery-1.10.2.min.js" defer></script>
-        <script src="js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="./css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="./css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="./css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="./js/jquery-1.10.2.min.js"></script>
+        <script src="./js/bootstrap-3.0.3.min.js"></script>
+        <script src="./js/highlight.pack.js"></script> 
     </head>
 
     <body class="homepage">
-        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-            <div class="container">
-                <a class="navbar-brand" href=".">My Docs</a>
 
-                <!-- Expanded navigation -->
-                <div id="navbar-collapse" class="navbar-collapse collapse">
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
 
-                    <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href=".">My Docs</a>
         </div>
 
-        <div class="container">
-            <div class="row">
-                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
-            <span class="fa fa-angle-down"></span>
-        </button>
-    </div>
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
 
-    
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
-        <ul class="nav flex-column">
-            
-            <li class="nav-item" data-level="1"><a href="#final-year-project-report" class="nav-link">Final Year Project Report</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#index" class="nav-link">Index</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#arp-poisioning" class="nav-link">ARP poisioning:</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#gokul-js" class="nav-link">GOKUL JS</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#analyzing-detecting-ip-layer-attacks" class="nav-link">Analyzing &amp; Detecting IP Layer Attacks</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#the-ip-layer" class="nav-link">The IP Layer</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#ipv4" class="nav-link">IPV4</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-        </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#final-year-project-report">Final Year Project Report</a></li>
+        <li class="main "><a href="#index">Index</a></li>
+            <li><a href="#1-link-layer">1. Link Layer</a></li>
+            <li><a href="#2-mitm-attacks">2. MITM Attacks</a></li>
+            <li><a href="#3-arp-attacks">3. ARP Attacks</a></li>
+    </ul>
 </div></div>
-                    <div class="col-md-9" role="main">
+                <div class="col-md-9" role="main">
 
 <h1 id="final-year-project-report">Final Year Project Report</h1>
-<h2 id="index">Index</h2>
-<ol>
-<li>ARP Attacks</li>
-<li>MITM Attacks</li>
-</ol>
+<h1 id="index">Index</h1>
+<h2 id="1-link-layer">1. Link Layer</h2>
+<h2 id="2-mitm-attacks">2. MITM Attacks</h2>
+<h2 id="3-arp-attacks">3. ARP Attacks</h2>
+<h3 id="1-link-layer_1">1 Link Layer</h3>
 <p>The IEEE 802.x Link layers are a family of standards that enable intercommunications between equipment from a variety of manufacturers</p>
 <p>Link layer communication is facilitated by Network Interface Cards (NICs) and the respective device drivers.Using those, a host can interact with the physical medium on which it resides.Any NIC has a unique identification number known as a
 MAC address which is issued by the NIC’s manufacturer during NIC creation</p>
@@ -100,141 +73,66 @@ MAC address which is issued by the NIC’s manufacturer during NIC creation</p>
 • ARP is stateless. Whenever an ARP response is received, hosts will
 create or update a cache entry with the observed IP/MAC pair (regardless of them issuing an ARP request or not).
 • An initial ARP request can result in the requester’s IP/MAC pair being cached by listening (for broadcasts) hosts; this is done to reduce ARP broadcast requests</p>
-<ol>
-<li>MITM Attacks</li>
-</ol>
+<h3 id="1-mitm-attacks">1. MITM Attacks</h3>
 <p>Those ARP shortcomings can be leveraged by an attacker to launch man-in-the-middle attacks, where he/she can pose as just another host on the local network or even as a router.</p>
 <p>If such attacks are executed successfully, the attacker can receive traffic destined for another host, inspect it or alter it and ultimately forward it to the original destination. Not only that, but the attacker can also receive, inspect or alter the traffic from the original destination and ultimately
 forward it back to the original sender.</p>
 <p><img alt="MITM" src="https://github.com/HariPranav/BENIMAGES/blob/master/fyp/MITM?raw=true" /></p>
-<ol>
-<li>ARP Attacks</li>
-</ol>
+<h3 id="2-arp-attacks">2. ARP Attacks</h3>
 <p>ARP poisoning can be exploited to add fake information between two communication peers into a local network. In a scenario in which M (the attacker) wants to listen to all the traffic between A and B, Mwould have to send fake IP/MAC pairs to both A and B, making himself the Man-in-the-Middle   </p>
 <p>• Normal: ARP broadcasts are normal from both clients and servers, including network devices at a reasonable flow.
 • Suspicious: Tens, hundreds, or even thousands of ARP broadcast messages within a small time window.</p>
 <p>Even without knowing off hand what legit device can potentially have that MAC address on your network, but just based on the flow and speed of the ARP Requests, we can tell something is odd.</p>
 <p><img alt="normal ARP" src="https://github.com/HariPranav/BENIMAGES/blob/master/fyp/NormalARP?raw=true" /></p>
 <p><img alt="grafted ARP" src="https://github.com/HariPranav/BENIMAGES/blob/master/fyp/Grafted%20ARP?raw=true" /></p>
-<h2 id="arp-poisioning">ARP poisioning:</h2>
+<h3 id="2a-arp-poisioning">2.a ARP poisioning:</h3>
 <p>The following are the steps for a successful attack:
 1. M would pretend to be B to A: it will send a gratuitous ARP reply with the pair: IP_B-&gt;MAC_M
 2. M would pretend to be A to B: it will send a gratuitous ARP reply with the pair: IP_A-&gt;MAC_M
 Because of the TTL in hosts ARP caches, an attacker would need to send these packets at intervals lower than the timeout (usually every 30 seconds is a good choice).</p>
 <p><img alt="ARP 1" src="https://github.com/HariPranav/BENIMAGES/blob/master/fyp/ARP_1?raw=true" /></p>
-<p><img alt="ARP 2" src="https://github.com/HariPranav/BENIMAGES/blob/master/fyp/ARP_2?raw=true" /></p>
-<h1 id="gokul-js">GOKUL JS</h1>
-<h1 id="analyzing-detecting-ip-layer-attacks">Analyzing &amp; Detecting IP Layer Attacks</h1>
-<h2 id="the-ip-layer">The IP Layer</h2>
-<p>The IP layer’s functions are related to how packets are transferred from one hop to another. Source and destination IP addresses are used by the IP layer for inter-host communication. IP addresses reside in the IP header of the IP packet. It should be noted that IP packets travel individually as they are directed to their destination. For example, IP packets from the same source that are traveling to the same destination could get there through different routes.</p>
-<p>During packet delivery, a lot of things can go wrong. The IP layer has no built-in mechanism to identify when a packet gets lost, expired, or dropped. The Transport protocol or the application itself is responsible for identifying and resolving any packet loss.</p>
-<h2 id="ipv4">IPV4</h2>
-<p><img height="400px" width="100%" src="https://raw.githubusercontent.com/HariPranav/BENIMAGES/master/ip%20layer%20attacks/ipv4.png"/></p>
-<ul>
-<li>
-<p>VERSION: Version of the IP protocol (4 bits), which is 4 for IPv4</p>
-</li>
-<li>
-<p>HLEN: IP header length (4 bits), which is the number of 32 bit words in the header. The minimum value for this field is 5 and the maximum is 15.</p>
-</li>
-<li>
-<p>Type of service: Low Delay, High Throughput, Reliability (8 bits)</p>
-</li>
-<li>
-<p>Total Length: Length of header + Data (16 bits), which has a minimum value 20 bytes and the maximum is 65,535 bytes.</p>
-</li>
-<li>
-<p>Identification: Unique Packet Id for identifying the group of fragments of a single IP datagram (16 bits)</p>
-</li>
-<li>
-<p>Flags: 3 flags of 1 bit each : reserved bit (must be zero), do not fragment flag, more fragments flag (same order)</p>
-</li>
-<li>
-<p>Fragment Offset: Represents the number of Data Bytes ahead of the particular fragment in the particular Datagram. Specified in terms of number of 8 bytes, which has the maximum value of 65,528 bytes.</p>
-</li>
-<li>
-<p>Time to live: Datagram’s lifetime (8 bits), It prevents the datagram to loop through the network by restricting the number of Hops taken by a Packet before delivering to the Destination.</p>
-</li>
-<li>
-<p>Protocol: Name of the protocol to which the data is to be passed (8 bits)</p>
-</li>
-<li>
-<p>Header Checksum: 16 bits header checksum for checking errors in the datagram header</p>
-</li>
-</ul>
-<p>Length (IP header length): A fieldcontaining the length of the IP header.</p>
-<p>Total Length (IP datagram/packet length): Specifies the length of the IP packet that includes the IP header and the user data.</p>
-<p>Fragment(ed) Offset: In case of a packet being divided, the fragmentation offset value will be used to reassemble the packet.</p>
-<p>Let’s elaborate more on some important and, oftentimes, abused IPv4 fields.</p>
-<p>First, an IP Version field exists indicating whether we are dealing with IPv4 or IPv6 (valid version numbers are 4 and 6 only). If an invalid IP Version value is identified at the host or router level, the datagram/packet must be silently discarded according to the respective RFC.</p></div>
-            </div>
+<p><img alt="ARP 2" src="https://github.com/HariPranav/BENIMAGES/blob/master/fyp/ARP_1?raw=true" /></p>
+<h3 id="detection-of-arp-on-the-stack">Detection of ARP on the Stack</h3>
+<p>Here we can see that the host is Kali machine </p>
+<p><img alt="Kali Host" src="https://github.com/HariPranav/BENIMAGES/blob/master/fyp/ARP_Host_Kali?raw=true" /></p>
+<p>Under the alert signature we can see that suricata can detect the different signatures</p>
+<p><img alt="Alert signature" src="https://github.com/HariPranav/BENIMAGES/blob/master/fyp/ARP_Host_Kali?raw=true" /></p>
+<p>Here under the alert category generated we can see that that see that the IDS can identify that there is potentially bad traffic</p>
+<p><img alt="ARP Alert Category" src="https://github.com/HariPranav/BENIMAGES/blob/master/fyp/ARP_Alert_Category?raw=true" /></p>
+<p>In the dashbord below we can see the different fields such as </p>
+<ol>
+<li>Destination IP vs count of the packets</li>
+<li>The duration of ARP sent which is abnormally high </li>
+<li>The Protocol UDP which is higher than TCP which carries the ICMP message protocol</li>
+<li>The Orgin IP of the ARP request which is abnormally high</li>
+</ol>
+<p><img alt="ARP Dashboard" src="https://github.com/HariPranav/BENIMAGES/blob/master/fyp/ARP_Dasboard?raw=true" /></p></div>
         </div>
 
         <footer class="col-md-12">
             <hr>
-            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
-        <script>
-            var base_url = ".",
-                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
-        </script>
-        <script src="js/base.js" defer></script>
-        <script src="search/main.js" defer></script>
-
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+        <script>var base_url = '.';</script>
+        <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script>
+        <script src="./js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
             </div>
             <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="help shortcut"><kbd>?</kbd></td>
-                    <td>Open this help</td>
-                  </tr>
-                  <tr>
-                    <td class="next shortcut"><kbd>n</kbd></td>
-                    <td>Next page</td>
-                  </tr>
-                  <tr>
-                    <td class="prev shortcut"><kbd>p</kbd></td>
-                    <td>Previous page</td>
-                  </tr>
-                  <tr>
-                    <td class="search shortcut"><kbd>s</kbd></td>
-                    <td>Search</td>
-                  </tr>
-                </tbody>
-              </table>
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
             </div>
             <div class="modal-footer">
             </div>
@@ -246,6 +144,6 @@ Because of the TTL in hosts ARP caches, an attacker would need to send these pac
 </html>
 
 <!--
-MkDocs version : 1.2.1
-Build Date UTC : 2021-06-18 02:44:58.306574+00:00
+MkDocs version : 0.16.3
+Build Date UTC : 2021-06-18 11:59:49
 -->
